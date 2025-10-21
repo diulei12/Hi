@@ -5,6 +5,7 @@
 	timedatectl status
 
 **Data masking** 
+
 	Need to end task appmclient and open back (refresh and relogin wont work)
 	Bypass microsoft win11
 	Shift + fn + f10 
@@ -12,12 +13,14 @@
 	Start ms-cxh:localonly
 
 **APPMClient 6.4.01 to 6.4.03**
+
 	update appmclient_config set appmclient_version = '6.4.03';
 	ALTER TABLE "APPM"."HOST" ADD ("PROXYFLAG" NUMBER(38,0) DEFAULT 0);
 	ALTER TABLE "APPM"."HOST" ADD ("PROXYPORT" NUMBER(38,0));
 	ALTER TABLE "APPM"."HOST" MODIFY ("DESCRIPTION" VARCHAR2(128));
 
 **Mysql default_download**
+
 	-sudo dnf install mariadb-connector-c-devel -y
 	-pip install mysqlclient
 	Recompile appmclient for user no need to insert ip direct pull from the pam web 
@@ -30,6 +33,7 @@
 	sudo nmcli con up eth2
 
 **How to check version 2.9 or 3.0**
+
 	Check appm_client/upgrade
 	If client 3.0.14 = 3.0 
 	If client 2.9.x = 2.9
@@ -38,6 +42,7 @@
 
 
 **Remote side fresh install** 
+
 	Find file path command
 	Sudo find -name “appm.tar.gz”
 	Reset rdp license
@@ -46,6 +51,7 @@
 	wClone Window Server, Change UNIQUE SID
 
 **Check script version**
+
 	strings ./appm_push_pwm | grep ver
 	Window Server License Activation
 	Choose Option 3 
@@ -58,6 +64,7 @@
 	passwd root
 
 **Upload MSI in pam web **
+
 	Tomcat API Push Password Change
 	HA proxy script for mysql au3
 	Password view 
@@ -74,11 +81,13 @@
 	Hardening 9.6 Size  
 
 **RSAT**
+
 	-Set up guide
 	Rocky Ver9.2toVer9.6
 	-Upgrade rocky 9.2 to 9.6 guide (offline)
 
 **Command to check service**
+
 	Ps -ef | grep remote 
 
 
@@ -89,17 +98,20 @@ permanents**
 
 
 **Checking server command**
+
 	nproc (vcpu)
 	free -g (system memory)
 	Hostname 
 
 
 **Command to reset uuid if u do cloned link for window server**
+
 	Run : sysprep
 
 **Permanent link for eth 0 and 1**
 
 **Account Locked in pam**
+
 	IRASS:
 	#su
 			#cd /root/.irass/*
@@ -112,32 +124,35 @@ permanents**
 	Then re-enter admin to create account
 
 **Account Locked in Web**
+
 	Cd sqlplus
 	update person set locked = 0 where personid = 'admin2';
 
 **Ssh linux:**
-Default passphrase key: 1234567890123456
-If ssh-rsa is unavailable, use ecdsa key
-Can check here to see ssh-rsa is able or not:
-#sudo grep 'sshd' /var/log/secure (This want may vary depending on os, but the point is to grep ssh, and see if it allow rsa key, or is it rejected)
-Generate key cmd (Both will prompt for passphrase):
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
-ssh-keygen -t ecdsa -b 521 -f ~/.ssh/id_ecdsa
-On source machine:
-ls ~/.ssh/id_rsa.pub		(Find out where the public key is located)
-cat it
-On target machine:
-mkdir -p ~/.ssh
-chmod 700 ~/.ssh
-vi ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-SAML for google log in 
-Hardened Rocky
-Proton Info
-Force the MAC address manually (temporary)
-sudo ip link set dev eth0 address 00:0c:29:77:d9:c4
+
+	Default passphrase key: 1234567890123456
+	If ssh-rsa is unavailable, use ecdsa key
+	Can check here to see ssh-rsa is able or not:
+	#sudo grep 'sshd' /var/log/secure (This want may vary depending on os, but the point is to grep ssh, and see if it allow rsa key, or is it rejected)
+	Generate key cmd (Both will prompt for passphrase):
+	ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
+	ssh-keygen -t ecdsa -b 521 -f ~/.ssh/id_ecdsa
+	On source machine:
+	ls ~/.ssh/id_rsa.pub		(Find out where the public key is located)
+	cat it
+	On target machine:
+	mkdir -p ~/.ssh
+	chmod 700 ~/.ssh
+	vi ~/.ssh/authorized_keys
+	chmod 600 ~/.ssh/authorized_keys
+	SAML for google log in 
+	Hardened Rocky
+	Proton Info
+	Force the MAC address manually (temporary)
+	sudo ip link set dev eth0 address 00:0c:29:77:d9:c4
 
 **LDAP**
+
 	CIMB appm oriss
 	CIMB Securities VPN credentials 
 	
@@ -147,7 +162,9 @@ sudo ip link set dev eth0 address 00:0c:29:77:d9:c4
 	STQ VPN IP - 211.24.90.90     (https://10.60.12.2:8443)
 
 SSMS 21.4.8 autoit 
+
 **Copy all py file to a new folder command (use for platform)**
+
 	mkdir testssms
 	cp mssql/*.py testssms/
 	Remove fan and power / usb (red color in vm) (sudo dnf -y install ipmitool)
@@ -164,12 +181,14 @@ SSMS 21.4.8 autoit
 	-hmailserver set up on appm (if secureki smtp cannot use might try this)
 
 **APPM client not showing in %appdata%**
+
 	 explorer %appdata% in Run
 	Patching for war file
 	unzip <>.war -d /home/appm/webroot/appm/ROOT
 
 
 **SecureKi Mobile Gateway**
+
 	Pre-requisite folder (Provided by Luke, if unable to access can ask from him)
 	Installation
 	sudo su
@@ -187,6 +206,7 @@ SSMS 21.4.8 autoit
 	Add to appm cronjob for auto start (optional)
 
 **Configuration**
+
 	1. Configure conf/appm_svr.conf
 	Appm_sever = eth 1
 	Mobile_gateway_server = none / ip has internet access
@@ -194,24 +214,30 @@ SSMS 21.4.8 autoit
 	2. Copy /home/appm/appm_client/certfile from APPM
 
 **Restart services + Check logs  **
+
 	cd bin
 	su to check log in pam
 	sudo pkill appm_svr_mgate;./appm_svr_mgate to check log in mobile gateway
 
 **Open config mode to view logs**
+
 	cd conf and cat appm_svr.conf in pam 
 	cd conf and cat appm_svr.conf in mobile gateway server
 	ps aux | grep appm_svr
 	systemctl status firewalld
 
 **Block command can ,OTP command cannot keep promp OTP **
+
 	otp issue go to su - irass check script use otp_auth.sh to check ,do patch if not same with .92
 	
 **Email cannot approve/reject on email**
+
 	Cd mail conf file to swap ip and requester need to log out first to approve/reject 
 Cloud Agent
 Set up for window and linux cloud agent guide
+
 **APPM Client stuck 85%**
+
 	cd appm_client 
 	sudo chown -R appm:dba ~/appm_client
 
@@ -220,7 +246,9 @@ Set up for window and linux cloud agent guide
 	sysdm.cpl
 GNS3
 GNS3 set up contact with local PC
+
 **Yyp Command control **
+
 	Go to Target host 
 	Visudo 
 	cytest1 ALL=(ALL)  NOPASSWD: ALL
@@ -232,6 +260,7 @@ GNS3 set up contact with local PC
 
 
 **Zip and unzip specific folder only **
+
 	tar -czvBpf webroot.tar.gz /home/appm/webroot/ (zip in source)
 	tar -czvBpf otp.tar.gz /home/appm/otp/
 	tar -czvBpf mail.tar.gz /home/appm/mail
@@ -270,6 +299,7 @@ wget http://192.168.80.64:8080/apache-tomcat.tar.gz
 
 
 **JarScanner**
+
 	Cd apache/tomcat /Context.xml
 	<JarScanner>
 	    <JarScanFilter defaultPluggabilityScan="false" />
@@ -277,6 +307,7 @@ wget http://192.168.80.64:8080/apache-tomcat.tar.gz
 
 
 **Permanent mac address **
+
 	sudo nmcli connection modify eth0 802-3-ethernet.cloned-mac-address "2c:ea:7f:5b:77:42";sudo nmcli connection down eth0;sudo nmcli connection up eth0
 	sudo nmcli connection modify eth0 802-3-ethernet.cloned-mac-address "d0:94:66:86:f7:cf";sudo nmcli connection down eth0;sudo nmcli connection up eth0
 	sudo nmcli connection modify eth0 802-3-ethernet.cloned-mac-address "2c:ea:7f:80:76:18";sudo nmcli connection down eth0;sudo nmcli connection up eth0
@@ -284,6 +315,7 @@ wget http://192.168.80.64:8080/apache-tomcat.tar.gz
 
 
 **After SetUp Server, Language Change:**
+
 		For PAM website 
 	#webroot/appm/ROOT/WEB-INF/classes/language_format
 
@@ -292,6 +324,7 @@ wget http://192.168.80.64:8080/apache-tomcat.tar.gz
 	#LANG=en_US.UTF-8
 
 **Mount DB:**
+
 	#sudo cryptsetup luksOpen /dev/sda3 oracle
 	sudo cryptsetup luksOpen /dev/nvme0n1p3 oracle
 	sudo systemctl daemon-reload
@@ -312,6 +345,7 @@ wget http://192.168.80.64:8080/apache-tomcat.tar.gz
 	在自己的机里面解压:
 
 **To Extract / Untar in your VM**
+
 	#sudo tar -xvpf appm.tar.gz -C /
 	#sudo tar -xvpf irass.tar.gz -C /
 	#sudo tar -xvpf irassgw.tar.gz -C /
@@ -344,6 +378,7 @@ IMPORT and EXPORT DB
 	    - IMPORT ALL :  impdp \"sys/password as sysdba\"
 
 **Windows self create license 创建自签名证书:**
+
 		# new-SelfSignedCertificate -certstorelocation cert:\localmachine\my -dnsname "ServerPC01.ski.com"
 		# $pwd = ConvertTo-SecureString -String P@ssw0rd -Force -AsPlainText
 		检查RDS许可证模式（应该是1或者是2）
@@ -354,19 +389,24 @@ IMPORT and EXPORT DB
 		# Restart-Service TermService -Force
 		# Restart-Service Tssdis -Force
 **To Check when download account to see error:**
+
 	# while true; do ps -ef | grep default_download | grep -v grep ; done 
 **To Check when password change to see error:**
+
 	# while true; do ps -ef | grep default_chpwd | grep -v grep; done
 **Port Listening appm:**
+
 	# sudo netstat -tulnp | grep :1808
 	# sudo netstat -an | grep 1808
 	Checks every second for the specific port is listening:
 	# while true; do sudo netstat -tuln | grep :1808; sleep 1; done
 
 **Check appm if process is running:**
+
 	# pgrep -fl <process> 		e.g. pgrep -fl appm_svr
 
 **Proxmox**
+
 nmap -p 8006 --open 192.168.80.0/24 (Command for searching open proxmox port 8006 in subnet 192.168.80.xx)	
 
 
@@ -406,9 +446,11 @@ Cd conf - > pem change to pem.bak
 
 
 **Mail Setting unable to save (Reason being missing 1 field in sql, thus, unable to process the data)**
+
 	# INSERT INTO "APPM"."MAIL_SERVER_CONFIG" VALUES (DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
 
 **License Saving Setting:**
+
 	# Insert into APPM.LICENSE_INFO (COMPANYNAME,HOSTNUMBER,LICENSE,LIC_EXPIRE_DATE,OTPNUMBER,OTP_LICENSE,OTP_LIC_EXPIRE_DATE,LICENSE2,OTP_LICENSE2,LOOKNUMBER,LOOK_LICENSE,LOOK_LIC_EXPIRE_DATE,LOOK_LICENSE2,IRASSNUMBER,IRASS_LICENSE,IRASS_LIC_EXPIRE_DATE,IRASS_LICENSE2,CLIENTNUMBER,CLIENT_LICENSE,CLIENT_LIC_EXPIRE_DATE,CLIENT_LICENSE2,HAVEROW,CLIENT_BIO_NUMBER,CLIENT_MOBILE_NUMBER,CCTV_LICENSE,CCTV_LICENSE2,CCTV_NUMBER,CCTV_LIC_EXPIRE_DATE,PC_LICENSE,PC_LICENSE2,PC_NUMBER,PC_LIC_EXPIRE_DATE) values (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,null,null,null,null,null,null,null,null,null,null);
 For Mail and License and future DB error:
 	- Can try to query and see if there is multiple row in data, usually is incorrect if there is more than 1 total count after doing 
@@ -417,6 +459,7 @@ To ensure language is in english codex and display all user in correct font cmd 
 	# chcp 437 && net user
 
 **Onboard Linux account using public IP:**
+
 	New Account:
 		1. Create new sudo account
 		2. Generate ssh key
@@ -434,13 +477,14 @@ To ensure language is in english codex and display all user in correct font cmd 
 	# unzip /tmp/92_binary.zip
 
 **WinCloud:**
+
 	# cd bin
 	# pkill appm_svr;./appm_svr 	(To see cloud connection)
 	- Always make sure to change device name after clone.
 	- Ensure that domain account has domain admin rights. 
 
-
 **Fortigate cmd:-**
+
 	To get the ip address:
 		# get system interface
 	To change the ip interface:	
@@ -470,6 +514,7 @@ To ensure language is in english codex and display all user in correct font cmd 
 		Then use http://<ip>:80 to access fortigate web
 
 **Window Group Policy**
+
 	cmd:
 	Update group policy after changes
 	# gpupdate /force
@@ -659,6 +704,7 @@ top
 
 
 **Installing RACADM / ISM**
+
 	==============================
 	sudo dnf config-manager --set-enabled crb
 	curl -O https://linux.dell.com/repo/hardware/dsu/bootstrap.cgi
@@ -681,7 +727,9 @@ top
 	
 	sudo systemctl enable dsm_om_connsvc
 	sudo systemctl start dsm_om_connsvc
+
 **racadm指令**
+
 	关闭 iDRAC 的 IPv6：
 	racadm set iDRAC.IPv6.Enable 0
 	启用 iDRAC 网卡：
@@ -695,55 +743,67 @@ top
 	racadm getniccfg
 
 **Windows准证**
+
 	https://massgrave.dev/
 
 **Linux Server sudo无需密码设定**
+
 	su root
 	visudo
 	username ALL=(ALL:ALL) NOPASSWD: ALL
 
 
 **Linux Server not hostname设定**
+
 	sudo vi /ect/resolv.conf
 	删除一切
 
 
 **sh脚本使用appm环境运行某个脚本**
+
 	sudo -u appm bash --login -c "脚本名字"
 	例子：
 	sudo -u appm bash --login -c "/home/appm/script/slave_up_email_alert.sh"
 
 
 **APPM ssh full trace 回放功能问题**
+
 	sudo update-crypto-policies --set DEFAULT:SHA1
 	如果还是不行，检查/home/irasstrace/.ssh，里面有没有密钥
 
 
 **tar 命令 仅保留文件的权限，但不记录文件的绝对路径和拥有者信息**
+
 	tar --no-same-owner --mode=go-w --create --file=backup.tar myfile
 
 **文件从windows规格转换去linux规格**
+
 	sed -i 's/\r$//' <文件名>
 	例子： sed -i 's/\r$//' namelist.csv
 
 
 **Windows创建自签名证书**
+
 	New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -dnsname "RDS"
 	$pwd = ConvertTo-SecureString -String P@ssw0rd -Force -AsPlainText
 
 
 **强制Windows服务器更新GPO**
+
 	gpupdate /force
 
 
 **Windows重启RDP服务**
+
 	Restart-Service TermService
 
 
 **手动命令RDP连接RD Connection Broker（如果 /admin 可以连上，但普通 RDP 不能，说明 普通用户会话有问题）**
+
 	mstsc /v:《域名或者IP》 /admin
 
 **检查RDS许可证模式（应该是1或者是2）**
+
 	Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\RCM\Licensing Core" -Name LicensingMode
 	接着在mmc里进行部署
 	
@@ -755,15 +815,18 @@ top
 
 
 **以Unzip的方式按照补丁**
+
 	unzip 《.war补丁》 -d 《目的地》
 	例子： 
 	unzip 0304_appmui_i18n_Transformation-6.14.1_BETA.war -d /home/appm/webroot/appm/ROOT/
 
 **ssh error code:519**
+
 	irass没开
 
 
 **Windows RDP权限**
+
 	情况一，拥有域控制伺服器，且使用域规则
 	在域控制伺服器使用gpmc.msc 进入Group Policy Management
 	Default Domain Policy > Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > User Rights Assignment > Allow log on through Remote Desktop Services
@@ -776,30 +839,36 @@ top
 
 
 **删除旧的 SSH 密钥**
+
 	ssh-keygen -R 192.168.146.155
 
 
 **清除 RDP 服务器的“信任列表”**
+
 	HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client
 
 
 **Proxmox上传ovf**
+
 	qm importdisk VM的ID 名字.vmdk local-lvm --format qcow2
 
 
 **下载SSL后导致ssh崩溃**
+
 	sudo dnf clean all
 	sudo dnf makecache
 	sudo dnf install -y openssh-server openssh-clients
 
 
 **Rocky Linux检查硬盘是 SSD 还是 HDD**
+
 	cat /sys/block/*/queue/rotational
 	返回 1 表示 HDD（机械硬盘）
 	返回 0 表示 SSD（固态硬盘）
 
 
 **dnf 自动解决依赖**
+
 	dnf install -y --allowerasing 《名字》
 
 
@@ -815,6 +884,7 @@ RDS证书放入其他电脑受信任的根证书颁发机构 (Root)
 
 
 **Fortigate设定**
+
 	config system interface
 	    edit port1
 	        set mode static
