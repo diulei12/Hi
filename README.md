@@ -1,4 +1,5 @@
 **NTP set time**
+	
 	sudo timedatectl set-timezone Asia/Kuala_Lumpur
 	sudo timedatectl set-ntp true
 	timedatectl status
