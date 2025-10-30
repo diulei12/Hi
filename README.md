@@ -25,7 +25,7 @@
 	-pip install mysqlclient
 	Recompile appmclient for user no need to insert ip direct pull from the pam web 
 
-**Disk partition if cant delete from disk management **
+**Disk partition if cant delete from disk management**
 
 	If already open bridge on vm still not up ip
 	nmcli dev status
@@ -39,7 +39,6 @@
 	If client 2.9.x = 2.9
 
 **2 AppmClient Guide**
-
 
 **Remote side fresh install** 
 
@@ -63,7 +62,7 @@
 	chroot /sysroot
 	passwd root
 
-**Upload MSI in pam web **
+**Upload MSI in pam web**
 
 	Tomcat API Push Password Change
 	HA proxy script for mysql au3
@@ -90,19 +89,14 @@
 
 	Ps -ef | grep remote 
 
-
-
-
 **Putty cannot go in vi 50-cloud-init to yes and restart service (for hardening)
 permanents**
-
 
 **Checking server command**
 
 	nproc (vcpu)
 	free -g (system memory)
 	Hostname 
-
 
 **Command to reset uuid if u do cloned link for window server**
 
@@ -186,7 +180,6 @@ SSMS 21.4.8 autoit
 	Patching for war file
 	unzip <>.war -d /home/appm/webroot/appm/ROOT
 
-
 **SecureKi Mobile Gateway**
 
 	Pre-requisite folder (Provided by Luke, if unable to access can ask from him)
@@ -213,7 +206,7 @@ SSMS 21.4.8 autoit
 	cert_download _portnum = 1807
 	2. Copy /home/appm/appm_client/certfile from APPM
 
-**Restart services + Check logs  **
+**Restart services + Check logs**
 
 	cd bin
 	su to check log in pam
@@ -226,28 +219,29 @@ SSMS 21.4.8 autoit
 	ps aux | grep appm_svr
 	systemctl status firewalld
 
-**Block command can ,OTP command cannot keep promp OTP **
+**Block command can ,OTP command cannot keep promp OTP**
 
 	otp issue go to su - irass check script use otp_auth.sh to check ,do patch if not same with .92
 	
 **Email cannot approve/reject on email**
 
 	Cd mail conf file to swap ip and requester need to log out first to approve/reject 
-Cloud Agent
-Set up for window and linux cloud agent guide
+	Cloud Agent
+	Set up for window and linux cloud agent guide
 
 **APPM Client stuck 85%**
 
 	cd appm_client 
 	sudo chown -R appm:dba ~/appm_client
 
-**Check domain or not in window server **
+**Check domain or not in window server**
+	
 	win+r
 	sysdm.cpl
-GNS3
-GNS3 set up contact with local PC
+	GNS3
+	GNS3 set up contact with local PC
 
-**Yyp Command control **
+**Yyp Command control**
 
 	Go to Target host 
 	Visudo 
@@ -255,11 +249,9 @@ GNS3 set up contact with local PC
 	
 	Yyp (copy current row)
 	Dd (delete current row)
-	
 	Policy -> command control -> add ->   account group -> command control group id (account group)
 
-
-**Zip and unzip specific folder only **
+**Zip and unzip specific folder only**
 
 	tar -czvBpf webroot.tar.gz /home/appm/webroot/ (zip in source)
 	tar -czvBpf otp.tar.gz /home/appm/otp/
@@ -277,26 +269,28 @@ GNS3 set up contact with local PC
 	sudo tar -xvpf apachetomcat.tar.gz -C /
 	sudo tar -xvpf mobilegate.tar.gz -C / 
 
-1VPN
-Telnet x.x.x.x port 
-Tracert (x.x.x.x) PAM IP after connected to vpn 
-Fresh install  
-No need to run the delete lipway server section bcz it  will affect the veracrypt and cause usb error.
-Host server to download file 
-Main server host server : python3 -m http.server 8080
+**1VPN**
+	
+	Telnet x.x.x.x port 
+	Tracert (x.x.x.x) PAM IP after connected to vpn 
 
-Then on another machine that wants to get files
+**Fresh install**
+	
+	No need to run the delete lipway server section bcz it  will affect the veracrypt and cause usb error.
 
-wget http://192.168.80.88:8080/irass.tar.gz
-wget http://192.168.80.88:8080/irassgw.tar.gz
-wget http://192.168.80.88:8080/irasstrace.tar.gz
-wget http://192.168.80.64:8080/start
-wget http://192.168.80.64:8080/others_scripts.tar.gz
-wget http://192.168.80.88:8080/appm.tar.gz
-wget http://192.168.80.64:8080/guacamole-server-1.3.0.tar.gz
-wget http://192.168.80.64:8080/others_contents.tar.gz
-wget http://192.168.80.64:8080/apache-tomcat.tar.gz
-
+**Host server to download file** 
+		
+		Main server host server : python3 -m http.server 8080
+		Then on another machine that wants to get files
+		wget http://192.168.80.88:8080/irass.tar.gz
+		wget http://192.168.80.88:8080/irassgw.tar.gz
+		wget http://192.168.80.88:8080/irasstrace.tar.gz
+		wget http://192.168.80.64:8080/start
+		wget http://192.168.80.64:8080/others_scripts.tar.gz
+		wget http://192.168.80.88:8080/appm.tar.gz
+		wget http://192.168.80.64:8080/guacamole-server-1.3.0.tar.gz
+		wget http://192.168.80.64:8080/others_contents.tar.gz
+		wget http://192.168.80.64:8080/apache-tomcat.tar.gz
 
 **JarScanner**
 
@@ -305,14 +299,11 @@ wget http://192.168.80.64:8080/apache-tomcat.tar.gz
 	    <JarScanFilter defaultPluggabilityScan="false" />
 	</JarScanner>
 
-
-**Permanent mac address **
+**Permanent mac address**
 
 	sudo nmcli connection modify eth0 802-3-ethernet.cloned-mac-address "2c:ea:7f:5b:77:42";sudo nmcli connection down eth0;sudo nmcli connection up eth0
 	sudo nmcli connection modify eth0 802-3-ethernet.cloned-mac-address "d0:94:66:86:f7:cf";sudo nmcli connection down eth0;sudo nmcli connection up eth0
 	sudo nmcli connection modify eth0 802-3-ethernet.cloned-mac-address "2c:ea:7f:80:76:18";sudo nmcli connection down eth0;sudo nmcli connection up eth0
-
-
 
 **After SetUp Server, Language Change:**
 
@@ -388,12 +379,15 @@ IMPORT and EXPORT DB
 		然后重启 RDS 相关服务
 		# Restart-Service TermService -Force
 		# Restart-Service Tssdis -Force
+		
 **To Check when download account to see error:**
 
 	# while true; do ps -ef | grep default_download | grep -v grep ; done 
+	
 **To Check when password change to see error:**
 
 	# while true; do ps -ef | grep default_chpwd | grep -v grep; done
+	
 **Port Listening appm:**
 
 	# sudo netstat -tulnp | grep :1808
@@ -407,14 +401,14 @@ IMPORT and EXPORT DB
 
 **Proxmox**
 
-nmap -p 8006 --open 192.168.80.0/24 (Command for searching open proxmox port 8006 in subnet 192.168.80.xx)	
-
-
-https://192.168.80.233:8006
-root/appmadmin
-
-https://192.168.80.137:8006
-root/secureki@1099
+	nmap -p 8006 --open 192.168.80.0/24 (Command for searching open proxmox port 8006 in subnet 192.168.80.xx)	
+	
+	
+	https://192.168.80.233:8006
+	root/appmadmin
+	
+	https://192.168.80.137:8006
+	root/secureki@1099
 
 	APPM Server:
 	192.168.80.61
@@ -556,151 +550,161 @@ sqlplus / as sysdba
 		# cd /opt/oracle/admin/XE/dpdump/
 		# impdp \"sys/password as sysdba\"
 
-
-
-
-Manual ssh web connection:
+**Manual ssh web connection:**
 	# ssh -F /home/irassgw/conf/ssh_config
 
-Check connection ssh on target:
+**Check connection ssh on target:**
 	1. Go root
 	# cd /var/log tail -f auth.log
 
-Download Window Server fail, 
+**Download Window Server fail** 
 	SSL error:
 	- Make sure IP address got Master IP
 
 	TCP error: 
 	- Check port inbound for port 7208
 
-When head to sudo -s:
+**When head to sudo -s:**
 	1. Get source:
 	#source /home/appm/.profile
 	2. To check source:
 	#!s
 
-DB脚本安装:
-先安装依赖包
-sudo dnf install python3-devel
-sudo dnf module enable mariadb:10.11(用sudo dnf module list mariadb来确认版本）
-sudo dnf install mariadb-devel
-然后就可以下载mysqlclient了
-pip install mysqlclient
-OS更换语言（去英文）
-nano .profile
-LANG=en_US.UTF-8
+**DB脚本安装:
+先安装依赖包**
+
+	sudo dnf install python3-devel
+	sudo dnf module enable mariadb:10.11(用sudo dnf module list mariadb来确认版本）
+	sudo dnf install mariadb-devel
+	然后就可以下载mysqlclient了
+	pip install mysqlclient
+	OS更换语言（去英文）
+	nano .profile
+	LANG=en_US.UTF-8
+
+**apache找不到openSSL（缺少apr):**
+	
+	find / -name libtcnative-1.so -- 找到libtcnative-1.so的文件路径
+	sudo nano /home/appm/apache-tomcat/bin/setenv.sh
+	写入
+	export CATALINA_OPTS="$CATALINA_OPTS -Djava.library.path=《文件路径》
+	然后重启apache-tomcat
+	./home/appm/apache-tomcat/bin/shutdown.sh
+	./home/appm/apache-tomcat/bin/startup.sh
+
+**将windows文件切换成unix文件**
+	
+	dos2unix 《文件名称》
+
+**oracle数据库解锁用户**
+	
+	ALTER USER 《用户名》 ACCOUNT UNLOCK;
+
+**检查一个kernel模块有没有被加载和使用**
+	
+	modinfo <模块名称> -- 可以检查系统有没有下载该模块
+	lsmod | grep <模块名称> -- lsmod 命令可以显示当前加载的内核模块
+	mount | grep <文件系统类型> -- 查某个文件系统类型是否被挂载	
+	lsof | grep <文件系统模块> -- 进一步确认某个模块是否被某个进程使用
+
+**卸载某个kernel模块**
+	
+	sudo modprobe -r <模块名称>
+
+**以查找文件内容来查询文件的指令**
+	
+	grep -r "《内容》" 《位置》
+	例子： grep -r "kernel.randomize_va_space" /etc/sysctl.d/
+
+**检查包是否为被依赖包**
+	
+	rpm -q --whatrequires 《包的名称》
+	APPM web RDP出现TLS/SSL错误
+	i. 确保web功能关闭
+	ii. cd /home/appm/freerdp-2.7.0
+	iii. sudo sh install.sh
+	压缩和解压指令（Linux)
+	压缩
+	tar czvBpf appm.tar.gz /home/appm/
+	解压
+	tar -xvpf appm.tar.gz -C /
+	手动测试full trace功能
+	ssh -i /home/irass/conf/irasstrace.pem irasstrace@127.0.0.1
+	password verify sql 命令
+	手动设置触发
+	update account set vfy_nextpollflag=2,  VFY_NEXTPOLLDATE = TO_DATE('2024-12-23 14:39:00', 'YYYY-MM-DD HH24:MI:SS') where hostname='WinSvr01' and accountid='admin1';
+	检查触发条件
+	SELECT vfy_nextpollflag, TO_CHAR(vfy_nextpolldate, 'YYYY-MM-DD HH24:MI:SS') FROM account WHERE hostname = 'WinSvr01' AND accountid = 'admin1';
+	永久更改 DNS (NetworkManager 管理网络)
+	步骤 1：编辑 NetworkManager 配置文件：
+	#sudo vi /etc/NetworkManager/NetworkManager.conf
+	在文件的 [main] 部分下，确保有以下内容：
+	[main]
+	dns=none
+	步骤 2：编辑相应的连接配置文件（通常位于 /etc/NetworkManager/system-connections/ 目录下），找到正在使用的网络连接配置文件。
+	#sudo vi/etc/NetworkManager/system-connections/<your_connection_file>
+	[ipv4]
+	dns=8.8.8.8,8.8.4.4
+	步骤 4：重新启动 NetworkManager 服务以应用更改：
+	#sudo systemctl restart NetworkManager
+	确保目标是Windows域控制器
+		net user -- show local account
+		net user /domain -- show domain controller information
+		WMIC COMPUTERSYSTEM GET DOMAINROLE
+		0-standalone workstation
+		1-member wokstation
+		2-standalone server
+		3-member server
+		4-backup domain controller
+		
+		5-primary domain controller
+**查看温度传感器数据**
+	
+	sudo ipmitool sdr type temperature
+	
+**查看风扇速度**
+	
+	sudo ipmitool sdr type fan
+
+**新脚本所需要的audit log属性**
+	6.2版本：
+	__Audit_log($url,$audit_path,$hWnd,"None",$bwlist,$hostname,$sid,$accountid)
+	6.3版本：
+	__Audit_log($url,$audit_path,$hWnd,$title="None",$bwlist="None",$hostname="None",$sid="None",$accountid="None")
+	6.4版本：
+	__Audit_log($url,$audit_path,$hWnd, "None", $bwlist, $hostname, $sid, $accountid)
 
 
-apache找不到openSSL（缺少apr):
-find / -name libtcnative-1.so -- 找到libtcnative-1.so的文件路径
-sudo nano /home/appm/apache-tomcat/bin/setenv.sh
-写入
-export CATALINA_OPTS="$CATALINA_OPTS -Djava.library.path=《文件路径》
-然后重启apache-tomcat
-./home/appm/apache-tomcat/bin/shutdown.sh
-./home/appm/apache-tomcat/bin/startup.sh
+**检查Shared Pool Usage**
+	
+	SELECT SUM(BYTES) AS TOTAL, SUM(CASE WHEN NAME = 'free memory' THEN BYTES ELSE 0 END) AS FREE, ROUND((SUM(BYTES) - SUM(CASE WHEN NAME = 'free memory' THEN BYTES ELSE 0 END)) / SUM(BYTES) * 100, 2) AS "USED (%)" FROM V$SGASTAT WHERE POOL = 'shared pool';
+	do cronjob（为了定期清洗SHARED POOL)
+	ALTER SYSTEM FLUSH SHARED_POOL;
+	
+**cmd测试端口**
+	
+	powershell Test-NetConnection <IP ADDRES> -Port <port num>
+	
+	example : powershell Test-NetConnection 192.168.146.153 -Port 13389
+**rocky linux检查CPU**
+	
+	显示 CPU 型号、核心数、线程数、主频、缓存等信息
+	lscpu 
+	显示详细的 CPU 信息，包括每个核心的规格
+	cat /proc/cpuinfo
+	显示 BIOS 级别的 CPU 详细信息，包括 TDP、型号、支持的功能等
+	dmidecode -t processor
 
-
-将windows文件切换成unix文件
-dos2unix 《文件名称》
-
-
-oracle数据库解锁用户
-ALTER USER 《用户名》 ACCOUNT UNLOCK;
-
-检查一个kernel模块有没有被加载和使用
-modinfo <模块名称> -- 可以检查系统有没有下载该模块
-lsmod | grep <模块名称> -- lsmod 命令可以显示当前加载的内核模块
-mount | grep <文件系统类型> -- 查某个文件系统类型是否被挂载	
-lsof | grep <文件系统模块> -- 进一步确认某个模块是否被某个进程使用
-
-
-卸载某个kernel模块
-sudo modprobe -r <模块名称>
-
-
-
-以查找文件内容来查询文件的指令
-grep -r "《内容》" 《位置》
-例子： grep -r "kernel.randomize_va_space" /etc/sysctl.d/
-检查包是否为被依赖包
-rpm -q --whatrequires 《包的名称》
-APPM web RDP出现TLS/SSL错误
-i. 确保web功能关闭
-ii. cd /home/appm/freerdp-2.7.0
-iii. sudo sh install.sh
-压缩和解压指令（Linux)
-压缩
-tar czvBpf appm.tar.gz /home/appm/
-解压
-tar -xvpf appm.tar.gz -C /
-手动测试full trace功能
-ssh -i /home/irass/conf/irasstrace.pem irasstrace@127.0.0.1
-password verify sql 命令
-手动设置触发
-update account set vfy_nextpollflag=2,  VFY_NEXTPOLLDATE = TO_DATE('2024-12-23 14:39:00', 'YYYY-MM-DD HH24:MI:SS') where hostname='WinSvr01' and accountid='admin1';
-检查触发条件
-SELECT vfy_nextpollflag, TO_CHAR(vfy_nextpolldate, 'YYYY-MM-DD HH24:MI:SS') FROM account WHERE hostname = 'WinSvr01' AND accountid = 'admin1';
-永久更改 DNS (NetworkManager 管理网络)
-步骤 1：编辑 NetworkManager 配置文件：
-#sudo vi /etc/NetworkManager/NetworkManager.conf
-在文件的 [main] 部分下，确保有以下内容：
-[main]
-dns=none
-步骤 2：编辑相应的连接配置文件（通常位于 /etc/NetworkManager/system-connections/ 目录下），找到正在使用的网络连接配置文件。
-#sudo vi/etc/NetworkManager/system-connections/<your_connection_file>
-[ipv4]
-dns=8.8.8.8,8.8.4.4
-步骤 4：重新启动 NetworkManager 服务以应用更改：
-#sudo systemctl restart NetworkManager
-确保目标是Windows域控制器
-net user -- show local account
-net user /domain -- show domain controller information
-WMIC COMPUTERSYSTEM GET DOMAINROLE
-0-standalone workstation
-1-member wokstation
-2-standalone server
-3-member server
-4-backup domain controller
-5-primary domain controller
-查看温度传感器数据
-sudo ipmitool sdr type temperature
-查看风扇速度
-sudo ipmitool sdr type fan
-新脚本所需要的audit log属性
-6.2版本：
-__Audit_log($url,$audit_path,$hWnd,"None",$bwlist,$hostname,$sid,$accountid)
-6.3版本：
-__Audit_log($url,$audit_path,$hWnd,$title="None",$bwlist="None",$hostname="None",$sid="None",$accountid="None")
-
-
-
-检查Shared Pool Usage
-SELECT SUM(BYTES) AS TOTAL, SUM(CASE WHEN NAME = 'free memory' THEN BYTES ELSE 0 END) AS FREE, ROUND((SUM(BYTES) - SUM(CASE WHEN NAME = 'free memory' THEN BYTES ELSE 0 END)) / SUM(BYTES) * 100, 2) AS "USED (%)" FROM V$SGASTAT WHERE POOL = 'shared pool';
-do cronjob（为了定期清洗SHARED POOL)
-ALTER SYSTEM FLUSH SHARED_POOL;
-cmd测试端口
-powershell Test-NetConnection <IP ADDRES> -Port <port num>
-
-example : powershell Test-NetConnection 192.168.146.153 -Port 13389
-rocky linux检查CPU
-显示 CPU 型号、核心数、线程数、主频、缓存等信息
-lscpu 
-显示详细的 CPU 信息，包括每个核心的规格
-cat /proc/cpuinfo
-显示 BIOS 级别的 CPU 详细信息，包括 TDP、型号、支持的功能等
-dmidecode -t processor
-
-rocky linux检查内存
-显示当前内存使用情况，包括已用、空闲、缓存等信息
-free -h
-显示更详细的内存参数，例如 Swap 使用情况、缓存大小等
-cat /proc/meminfo
-显示内存的物理规格，例如 容量、类型 (DDR4)、速度 (MHz)、制造商、插槽使用情况
-dmidecode -t memory
-监视 CPU 和 RAM 的动态负载情况
-top
-
+**rocky linux检查内存**
+	
+	显示当前内存使用情况，包括已用、空闲、缓存等信息
+	free -h
+	显示更详细的内存参数，例如 Swap 使用情况、缓存大小等
+	cat /proc/meminfo
+	显示内存的物理规格，例如 容量、类型 (DDR4)、速度 (MHz)、制造商、插槽使用情况
+	dmidecode -t memory
+	监视 CPU 和 RAM 的动态负载情况
+	top
 
 
 **Installing RACADM / ISM**
@@ -813,7 +817,6 @@ top
 	Restart-Service TermService -Force
 	Restart-Service Tssdis -Force
 
-
 **以Unzip的方式按照补丁**
 
 	unzip 《.war补丁》 -d 《目的地》
@@ -823,7 +826,6 @@ top
 **ssh error code:519**
 
 	irass没开
-
 
 **Windows RDP权限**
 
@@ -837,21 +839,17 @@ top
 	Computer Configuration > Windows Settings > Security Settings > Local Policies > User Rights Assignment > Allow log on through Remote Desktop Services
 	接着在目标伺服器使用gpupdate /force指令来更新本地域规则
 
-
 **删除旧的 SSH 密钥**
 
 	ssh-keygen -R 192.168.146.155
-
 
 **清除 RDP 服务器的“信任列表”**
 
 	HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client
 
-
 **Proxmox上传ovf**
 
 	qm importdisk VM的ID 名字.vmdk local-lvm --format qcow2
-
 
 **下载SSL后导致ssh崩溃**
 
@@ -859,29 +857,28 @@ top
 	sudo dnf makecache
 	sudo dnf install -y openssh-server openssh-clients
 
-
 **Rocky Linux检查硬盘是 SSD 还是 HDD**
 
 	cat /sys/block/*/queue/rotational
 	返回 1 表示 HDD（机械硬盘）
 	返回 0 表示 SSD（固态硬盘）
 
-
 **dnf 自动解决依赖**
 
 	dnf install -y --allowerasing 《名字》
-
-
 RDS证书放入其他电脑受信任的根证书颁发机构 (Root)
+
 # 找到当前 RDS 证书
+	
 	$cert = Get-ChildItem -Path Cert:\LocalMachine\My | Where-Object { $_.Subject -eq "CN=RDS" }
 
 **#导出证书到 C:\RDS_Certificate.cer (只包含公钥)**
+	
 	Export-Certificate -Cert $cert -FilePath C:\RDS_Certificate.cer -Type CERT
 
 **#把证书导入到 受信任的根证书颁发机构 (Root)**
-	Import-Certificate -FilePath "C:\RDS_Certificate.cer" -CertStoreLocation Cert:\LocalMachine\Root
 
+	Import-Certificate -FilePath "C:\RDS_Certificate.cer" -CertStoreLocation Cert:\LocalMachine\Root
 
 **Fortigate设定**
 
@@ -902,28 +899,29 @@ RDS证书放入其他电脑受信任的根证书颁发机构 (Root)
 	end
 
 **APPM 关于SFTP Command Control的关键字**
+
 	_upload 
 	_download
 
-
 **Rocky Linux，搜索其拥有的工具（dnf install），并生成其所有的下载指令**
+
 	echo "#!/bin/bash" > install_packages.sh
 	dnf list installed | awk '{print $1}' | grep -v '^Installed' | grep -v '^$' | awk '{print "dnf install -y --allowerasing "$1}' >> install_packages.sh
 	chmod +x install_packages.sh
 
 
 **Rocky Linux，搜索其拥有的python库（pip list），并生成其所有的下载指令**
+	
 	echo "#!/bin/bash" > install_python_packages.sh
 	pip list --format=freeze | awk -F'==' '{print "pip install --no-cache-dir "$1}' >> install_python_packages.sh
 	chmod +x install_python_packages.sh
 
 
 **irass_sshd问题,手动启动irass_sshd，然后就会显示问题了**
+	
 	#/home/irass/bin/irass_sshd -f /home/irass/conf/sshd_config
 	
 	If say all key cant load, then check 92 or 31 at /usr/local/libexec and compare file, if missing copy over and give chmod 755. 
-
-
 
 **irass自动回放，数据库设置相关**
 	select LOGIN_TRANS_SEQ.nextval from dual;
@@ -963,8 +961,6 @@ RDS证书放入其他电脑受信任的根证书颁发机构 (Root)
 	CREATE SEQUENCE "APPM"."AUDIT_TRAIL_SEQ" MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT BY 1 START WITH 13196 NOCACHE NOORDER NOCYCLE NOKEEP NOSCALE GLOBAL;
 	
 	CREATE SEQUENCE "APPM"."LOGIN_EVENTS_SEQ" MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT BY 1 START WITH 13196 NOCACHE NOORDER NOCYCLE NOKEEP NOSCALE GLOBAL;
-
-
 
 **APPM account使用key来ssh**
 	1) Deploy a working key(no password), save into /home/irass/aws, as <hostip>_<useracc>.pem (Private)
