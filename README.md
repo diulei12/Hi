@@ -432,12 +432,12 @@ IMPORT and EXPORT DB
 	AnyDeskUser / SecureKi@1099
  
 **APPM ssh full trace Surveillance playback issue (irasstrace):**
-	# sudo update-crypto-policies --show
-	# sudo update-crypto-policies --set DEFAULT:SHA1
+	
+	sudo update-crypto-policies --show
+	sudo update-crypto-policies --set DEFAULT:SHA1
 	如果还是不行，检查/home/irasstrace/.ssh，里面有没有密钥
 	In easy term = su - irass 
 	Cd conf - > pem change to pem.bak 
-
 
 **Mail Setting unable to save (Reason being missing 1 field in sql, thus, unable to process the data)**
 
@@ -450,7 +450,7 @@ IMPORT and EXPORT DB
 	
 	- Can try to query and see if there is multiple row in data, usually is incorrect if there is more than 1 total count after doing 
 	# SELECT COUNT(*) FROM xxx 
-To ensure language is in english codex and display all user in correct font cmd (For Windows):
+	To ensure language is in english codex and display all user in correct font cmd (For Windows):
 	# chcp 437 && net user
 
 **Onboard Linux account using public IP:**
@@ -463,7 +463,7 @@ To ensure language is in english codex and display all user in correct font cmd 
 		5. In `Web, download the account, then have the private key paste in the account.
 		6. Finish
 
-**Grab binary from 92 (When rdp security credential having problem, can try to use this to solve): **
+**Grab binary from 92 (When rdp security credential having problem, can try to use this to solve):**
 	Using sudo -s
 	# zip -r /tmp/92_binary.zip /home/appm/bin /home/appm/appm_svr /home/irass/bin /home/irassgw/bin
 
@@ -531,12 +531,12 @@ HA:
 	DR:
 	1. Startup DB
 
-Import DB:-
+	Import DB:-
 	Make sure to snapshot first.
 	1. Login as appm
 	2. Stop APPM services. ONLY start database
 	3. Go to /home/appm/sql --> 
-sqlplus / as sysdba
+	sqlplus / as sysdba
 	4. In SQL,
 		# alter session set "_ORACLE_SCRIPT"=true;
 		# DROP USER appm CASCADE;
@@ -552,13 +552,16 @@ sqlplus / as sysdba
 		# impdp \"sys/password as sysdba\"
 
 **Manual ssh web connection:**
-	# ssh -F /home/irassgw/conf/ssh_config
+	
+	1.ssh -F /home/irassgw/conf/ssh_config
 
 **Check connection ssh on target:**
+	
 	1. Go root
-	# cd /var/log tail -f auth.log
+	cd /var/log tail -f auth.log
 
 **Download Window Server fail** 
+	
 	SSL error:
 	- Make sure IP address got Master IP
 
@@ -566,6 +569,7 @@ sqlplus / as sysdba
 	- Check port inbound for port 7208
 
 **When head to sudo -s:**
+	
 	1. Get source:
 	#source /home/appm/.profile
 	2. To check source:
@@ -963,6 +967,7 @@ RDS证书放入其他电脑受信任的根证书颁发机构 (Root)
 	CREATE SEQUENCE "APPM"."LOGIN_EVENTS_SEQ" MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT BY 1 START WITH 13196 NOCACHE NOORDER NOCYCLE NOKEEP NOSCALE GLOBAL;
 
 **APPM account使用key来ssh**
+
 	1) Deploy a working key(no password), save into /home/irass/aws, as <hostip>_<useracc>.pem (Private)
 	2) Drag this <hostip>_<useracc>.pem (Private) file, drop into web Account > Description.
 	  Put <hostip>_<useracc>.pem.pub (Public) to target server .ssh/authorized_keys
