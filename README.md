@@ -431,12 +431,12 @@ IMPORT and EXPORT DB
 	AdminUser / Rkskfl12!@
 	AnyDeskUser / SecureKi@1099
  
-APPM ssh full trace Surveillance playback issue (irasstrace):
+**APPM ssh full trace Surveillance playback issue (irasstrace):**
 	# sudo update-crypto-policies --show
 	# sudo update-crypto-policies --set DEFAULT:SHA1
 	如果还是不行，检查/home/irasstrace/.ssh，里面有没有密钥
-In easy term = su - irass 
-Cd conf - > pem change to pem.bak 
+	In easy term = su - irass 
+	Cd conf - > pem change to pem.bak 
 
 
 **Mail Setting unable to save (Reason being missing 1 field in sql, thus, unable to process the data)**
@@ -446,7 +446,8 @@ Cd conf - > pem change to pem.bak
 **License Saving Setting:**
 
 	# Insert into APPM.LICENSE_INFO (COMPANYNAME,HOSTNUMBER,LICENSE,LIC_EXPIRE_DATE,OTPNUMBER,OTP_LICENSE,OTP_LIC_EXPIRE_DATE,LICENSE2,OTP_LICENSE2,LOOKNUMBER,LOOK_LICENSE,LOOK_LIC_EXPIRE_DATE,LOOK_LICENSE2,IRASSNUMBER,IRASS_LICENSE,IRASS_LIC_EXPIRE_DATE,IRASS_LICENSE2,CLIENTNUMBER,CLIENT_LICENSE,CLIENT_LIC_EXPIRE_DATE,CLIENT_LICENSE2,HAVEROW,CLIENT_BIO_NUMBER,CLIENT_MOBILE_NUMBER,CCTV_LICENSE,CCTV_LICENSE2,CCTV_NUMBER,CCTV_LIC_EXPIRE_DATE,PC_LICENSE,PC_LICENSE2,PC_NUMBER,PC_LIC_EXPIRE_DATE) values (null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,null,null,null,null,null,null,null,null,null,null);
-For Mail and License and future DB error:
+**For Mail and License and future DB error:**
+	
 	- Can try to query and see if there is multiple row in data, usually is incorrect if there is more than 1 total count after doing 
 	# SELECT COUNT(*) FROM xxx 
 To ensure language is in english codex and display all user in correct font cmd (For Windows):
