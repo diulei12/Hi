@@ -667,13 +667,13 @@ sqlplus / as sysdba
 	sudo ipmitool sdr type fan
 
 **新脚本所需要的audit log属性**
+	
 	6.2版本：
 	__Audit_log($url,$audit_path,$hWnd,"None",$bwlist,$hostname,$sid,$accountid)
 	6.3版本：
-	__Audit_log($url,$audit_path,$hWnd,$title="None",$bwlist="None",$hostname="None",$sid="None",$accountid="None")
+    __Audit_log($url,$audit_path,$hWnd,$title="None",$bwlist="None",$hostname="None",$sid="None",$accountid="None")
 	6.4版本：
 	__Audit_log($url,$audit_path,$hWnd, "None", $bwlist, $hostname, $sid, $accountid)
-
 
 **检查Shared Pool Usage**
 	
@@ -720,7 +720,7 @@ sqlplus / as sysdba
 	vi /etc/yum.repos.d/dell-system-update.repo
 	remove all from dell-system-update_dependent
 	
-	wget -r -np -nH --cut-dirs=3 --accept "*.rpm" https://linux.dell.com/repo/hardware/dsu/os_dependent/RHEL9_64/
+	wget -r -np -nH --cut-dirs=3 --accept "*.rpm" 		https://linux.dell.com/repo/hardware/dsu/os_dependent/RHEL9_64/
 	cd os_dependent/RHEL9_64/srvadmin/
 	sudo dnf install *
 	
@@ -768,7 +768,6 @@ sqlplus / as sysdba
 	sudo -u appm bash --login -c "脚本名字"
 	例子：
 	sudo -u appm bash --login -c "/home/appm/script/slave_up_email_alert.sh"
-
 
 **APPM ssh full trace 回放功能问题**
 
